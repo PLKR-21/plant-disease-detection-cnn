@@ -1,0 +1,11 @@
+{
+  "test_loss": 0.21571627259254456,
+  "test_accuracy": 0.9287148714065552,
+  "classes": [
+    "Tomato___Bacterial_spot",
+    "Tomato___Early_blight",
+    "Tomato___Late_blight",
+    "Tomato___healthy"
+  ],
+  "epochs_completed": 9
+}

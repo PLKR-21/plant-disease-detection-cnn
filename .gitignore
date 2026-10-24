@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+
+# Dataset images
+data/raw/*
+!data/raw/.gitkeep
+
+# Trained model files (keep locally for deployment)
+models/*
+!models/plant_disease_cnn.keras
+!models/class_names.json
+
+# Temporary notebook files
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
