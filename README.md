@@ -159,6 +159,12 @@ The four classes used in this project are Bacterial Spot, Early Blight, Healthy,
 
 **Dataset note:** Dataset images are not included in the repository. Obtain the dataset separately and organize it according to the paths expected by the training and evaluation scripts.
 
+## 📓 Model Implementation Notebook
+
+The Jupyter Notebook demonstrates the complete CNN implementation, including dataset preprocessing, model architecture, training, accuracy and loss visualization, model evaluation, confusion matrix, and sample image prediction.
+
+**[View the CNN Model Implementation Notebook](notebooks/Plant_Disease_Detection_CNN_Model_Implementation.ipynb)**
+
 ## ⚠️ Limitations
 
 - The model is limited to the four tomato leaf categories used during training.
