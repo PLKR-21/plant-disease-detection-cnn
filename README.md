@@ -1,38 +1,45 @@
-# Plant Disease Detection Using CNN
+# 🌿 Plant Disease Detection Using CNN
 
-A deep learning application that classifies tomato leaf images into four categories using a Convolutional Neural Network (CNN). The project uses TensorFlow/Keras for image classification and Streamlit for an interactive web interface.
+A deep learning project that classifies tomato leaf images into disease and healthy categories using a **Convolutional Neural Network (CNN)** built with TensorFlow/Keras. The project includes a trained model, prediction scripts, evaluation outputs, and an interactive Streamlit web application.
 
-## Live Application
+## 🚀 Live Application
 
-**Try the application:** https://tomatoleafdiseasedetection.streamlit.app/
+Try the deployed application:
 
-Upload a tomato leaf image to view the predicted disease class and the model's confidence scores.
+**[🌱 Plant Disease Detection App](https://tomatoleafdiseasedetection.streamlit.app/)**
 
-## Features
+Upload a tomato leaf image to receive a predicted class and its associated confidence score.
 
-- Classifies tomato leaves into four categories.
-- Uses a custom CNN built with TensorFlow and Keras.
-- Supports image uploads through a Streamlit interface.
-- Displays the predicted class and class-wise probability scores.
-- Includes model evaluation with a classification report, confusion matrix, and learning curves.
-- Provides scripts for training, evaluation, and individual image prediction.
+## 🧪 Supported Classes
 
-## Supported Classes
+The model supports the following four categories:
 
-1. Tomato Healthy
-2. Tomato Early Blight
-3. Tomato Late Blight
-4. Tomato Bacterial Spot
+- **Tomato — Bacterial Spot**
+- **Tomato — Early Blight**
+- **Tomato — Healthy**
+- **Tomato — Late Blight**
 
-## Tech Stack
+## ✨ Features
 
-- **Language:** Python
-- **Deep Learning:** TensorFlow, Keras
-- **Image Processing:** Pillow, NumPy
-- **Web Interface:** Streamlit
-- **Dataset:** PlantVillage
+- CNN-based tomato leaf classification.
+- Interactive image upload and prediction through Streamlit.
+- Prediction confidence scores.
+- Model training and evaluation scripts.
+- Classification report and confusion matrix outputs.
+- Reusable inference functionality for local predictions and the web application.
 
-## Project Structure
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| TensorFlow / Keras | CNN model development and inference |
+| Streamlit | Interactive web application |
+| NumPy | Numerical operations |
+| Matplotlib | Visualization of training and evaluation results |
+| scikit-learn | Model evaluation metrics |
+
+## 📁 Project Structure
 
 ```text
 plant-disease-detection-cnn/
@@ -43,114 +50,130 @@ plant-disease-detection-cnn/
 ├── requirements.txt
 ├── src/
 │   ├── __init__.py
-│   ├── model.py
 │   ├── data_utils.py
-│   └── inference.py
+│   ├── inference.py
+│   └── model.py
 ├── models/
 │   ├── plant_disease_cnn.keras
 │   └── class_names.json
-├── data/
-│   └── raw/
 ├── outputs/
 │   ├── classification_report.json
 │   ├── confusion_matrix.png
 │   ├── learning_curves.png
 │   └── metrics.json
-└── notebooks/
-    └── Plant_Disease_Detection_CNN.ipynb
+├── notebooks/
+├── data/
+│   └── raw/
+└── README.md
 ```
 
-## Installation
+*Note: The structure above highlights the main project files. Some generated files and local-only folders may not be included in the repository.*
 
-Python 3.13 is recommended for the local environment used during development.
+## ⚙️ Installation and Setup
 
-Clone the repository:
+### Prerequisites
+
+- Python compatible with the TensorFlow version in `requirements.txt`
+- Git
+- pip
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/PLKR-21/plant-disease-detection-cnn.git
 cd plant-disease-detection-cnn
 ```
 
-Create and activate a virtual environment.
+### 2. Create a Virtual Environment
 
-**Windows PowerShell:**
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the Environment
+
+**Windows PowerShell**
 
 ```powershell
-py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install the dependencies:
+**Windows Command Prompt**
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+### 4. Install Dependencies
 
 ```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Dataset Setup
-
-Download the PlantVillage dataset from [Kaggle](https://www.kaggle.com/datasets/emmarex/plantdisease).
-
-Place the four required tomato class folders inside `data/raw/`:
-
-```text
-data/raw/
-├── Tomato___healthy/
-├── Tomato___Early_blight/
-├── Tomato___Late_blight/
-└── Tomato___Bacterial_spot/
-```
-
-The dataset images are not included in this repository.
-
-## Training
-
-After placing the dataset in the expected directory, run:
-
-```bash
-python train.py
-```
-
-## Model Evaluation
-
-Run:
-
-```bash
-python evaluate.py
-```
-
-Evaluation outputs are saved in the `outputs/` directory.
-
-## Run the Web Application
-
-Start the Streamlit app locally:
+### 5. Run the Streamlit Application
 
 ```bash
 streamlit run app.py
 ```
 
-Open the local URL displayed in your terminal.
+Open the local URL displayed in your terminal to use the application.
 
-## Individual Image Prediction
+## 🧠 Model Training
 
-Run the prediction script with an image path:
+The project uses a Convolutional Neural Network to learn visual patterns from tomato leaf images.
+
+To train the model, first prepare the dataset in the directory structure expected by the training script. Then run:
 
 ```bash
-python predict.py path/to/leaf_image.jpg
+python train.py
 ```
 
-## Limitations
+The training process generates a trained model and associated class information according to the project's configuration.
 
-- The model is trained on selected PlantVillage tomato leaf classes.
-- Predictions on real-world images may be affected by lighting, background, image quality, and differences from the training dataset.
-- Model confidence is not a guarantee of prediction accuracy.
-- This application is an educational prototype and is not a substitute for professional plant-health diagnosis.
+## 📊 Model Evaluation
 
-## License
+To evaluate the trained model, run:
 
-No license has been specified for this repository. Contact the repository owner before reusing or redistributing the project.
+```bash
+python evaluate.py
+```
 
-## Author
+The evaluation script can generate performance metrics and visualizations, depending on the configured dataset and output paths.
 
-**PLKR-21**
+## 🔍 Local Prediction
 
-GitHub: https://github.com/PLKR-21
+Use the prediction script to classify an image:
+
+```bash
+python predict.py --help
+```
+
+Follow the arguments shown by the script to provide the input image path.
+
+## 📚 Dataset
+
+The model was developed using tomato leaf image categories from the PlantVillage dataset.
+
+The four classes used in this project are Bacterial Spot, Early Blight, Healthy, and Late Blight.
+
+**Dataset note:** Dataset images are not included in the repository. Obtain the dataset separately and organize it according to the paths expected by the training and evaluation scripts.
+
+## ⚠️ Limitations
+
+- The model is limited to the four tomato leaf categories used during training.
+- Predictions may be affected by image quality, lighting, backgrounds, and differences between training images and real-world images.
+- A high confidence score does not guarantee that a prediction is correct.
+- This project is an educational prototype and should not replace professional agricultural diagnosis.
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for the full license terms.
+
+## 👨‍💻 Author
+
+**P. Laxmi Kanth Reddy**
+
+- GitHub: [PLKR-21](https://github.com/PLKR-21)
+- Repository: [Plant Disease Detection Using CNN](https://github.com/PLKR-21/plant-disease-detection-cnn)
+- Live Application: [Plant Disease Detection App](https://tomatoleafdiseasedetection.streamlit.app/)
